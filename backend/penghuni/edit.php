@@ -36,30 +36,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 <head>
     <title>Edit Penghuni Kost</title>
-    <style>
-        form { width: 350px; margin: 30px auto; padding: 20px; border: 1px solid #888; border-radius: 8px; }
-        label { display: block; margin-top: 10px; }
-        input[type=text], input[type=date] { width: 100%; padding: 6px; margin-top: 4px; }
-        button { margin-top: 15px; padding: 8px 16px; }
-        .err { text-align: center; color: red; }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h2 style="text-align:center">Edit Penghuni Kost</h2>
-    <?php if ($error): ?><div class="err"><?= $error ?></div><?php endif; ?>
-    <form method="post">
-        <label>Nama</label>
-        <input type="text" name="nama" value="<?= htmlspecialchars($data['nama']) ?>" required>
-        <label>No KTP</label>
-        <input type="text" name="no_ktp" value="<?= htmlspecialchars($data['no_ktp']) ?>" required>
-        <label>No HP</label>
-        <input type="text" name="no_hp" value="<?= htmlspecialchars($data['no_hp']) ?>" required>
-        <label>Tanggal Masuk</label>
-        <input type="date" name="tgl_masuk" value="<?= htmlspecialchars($data['tgl_masuk']) ?>" required>
-        <label>Tanggal Keluar</label>
-        <input type="date" name="tgl_keluar" value="<?= htmlspecialchars($data['tgl_keluar']) ?>">
-        <button type="submit">Update</button>
-        <a href="index.php" style="margin-left:10px">Kembali</a>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Edit Penghuni Kost</h2>
+    <?php if ($error): ?><div class="alert alert-danger text-center"><?= $error ?></div><?php endif; ?>
+    <form method="post" class="border p-4 rounded shadow-sm mx-auto" style="max-width:400px;">
+        <div class="mb-3">
+            <label class="form-label">Nama</label>
+            <input type="text" name="nama" class="form-control" value="<?= htmlspecialchars($data['nama']) ?>" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">No KTP</label>
+            <input type="text" name="no_ktp" class="form-control" value="<?= htmlspecialchars($data['no_ktp']) ?>" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">No HP</label>
+            <input type="text" name="no_hp" class="form-control" value="<?= htmlspecialchars($data['no_hp']) ?>" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Tanggal Masuk</label>
+            <input type="date" name="tgl_masuk" class="form-control" value="<?= htmlspecialchars($data['tgl_masuk']) ?>" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Tanggal Keluar</label>
+            <input type="date" name="tgl_keluar" class="form-control" value="<?= htmlspecialchars($data['tgl_keluar']) ?>">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a href="index.php" class="btn btn-secondary ms-2">Kembali</a>
     </form>
+</div>
 </body>
 </html> 
