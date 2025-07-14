@@ -24,26 +24,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 <head>
     <title>Tambah Barang Kost</title>
-    <style>
-        form { width: 300px; margin: 30px auto; padding: 20px; border: 1px solid #888; border-radius: 8px; }
-        label { display: block; margin-top: 10px; }
-        input[type=text], input[type=number] { width: 100%; padding: 6px; margin-top: 4px; }
-        button { margin-top: 15px; padding: 8px 16px; }
-        .msg { text-align: center; color: green; }
-        .err { text-align: center; color: red; }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h2 style="text-align:center">Tambah Barang Kost</h2>
-    <?php if ($success): ?><div class="msg"><?= $success ?></div><?php endif; ?>
-    <?php if ($error): ?><div class="err"><?= $error ?></div><?php endif; ?>
-    <form method="post">
-        <label>Nama Barang</label>
-        <input type="text" name="nama" required>
-        <label>Harga</label>
-        <input type="number" name="harga" required>
-        <button type="submit">Simpan</button>
-        <a href="index.php" style="margin-left:10px">Kembali</a>
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Tambah Barang Kost</h2>
+    <?php if ($success): ?><div class="alert alert-success text-center"><?= $success ?></div><?php endif; ?>
+    <?php if ($error): ?><div class="alert alert-danger text-center"><?= $error ?></div><?php endif; ?>
+    <form method="post" class="border p-4 rounded shadow-sm mx-auto" style="max-width:400px;">
+        <div class="mb-3">
+            <label class="form-label">Nama Barang</label>
+            <input type="text" name="nama" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Harga</label>
+            <input type="number" name="harga" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Simpan</button>
+        <a href="index.php" class="btn btn-secondary ms-2">Kembali</a>
     </form>
+</div>
 </body>
 </html> 
