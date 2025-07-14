@@ -1,0 +1,128 @@
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', 'Quicksand', Arial, sans-serif;
+    background: linear-gradient(-45deg, #f8bbd0 0%, #f3e5f5 40%, #fffde7 80%, #ede7f6 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 16s ease-in-out infinite;
+    position: relative;
+    overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.blob-bg {
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.22;
+    transition: opacity 0.3s;
+    filter: blur(4px) grayscale(0.2);
+}
+
+.blob-bg.top {
+    top: -120px;
+    left: -120px;
+    width: 400px;
+    height: 400px;
+}
+
+.blob-bg.bottom {
+    bottom: -120px;
+    right: -120px;
+    width: 400px;
+    height: 400px;
+    transform: rotate(180deg);
+}
+
+@media (max-width: 600px) {
+    .blob-bg.top,
+    .blob-bg.bottom {
+        width: 180px;
+        height: 180px;
+        top: -40px;
+        left: -40px;
+        bottom: -40px;
+        right: -40px;
+    }
+}
+
+.navbar {
+    background: linear-gradient(90deg, #f8bbd0 60%, #ede7f6 100%) !important;
+    box-shadow: 0 2px 12px #f8bbd055;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #7b1fa2 !important;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #f8bbd0 60%, #ede7f6 100%);
+    border: none;
+    color: #7b1fa2;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px #f8bbd033;
+}
+
+.btn-primary:hover {
+    background: #f3e5f5;
+    color: #4a148c;
+    box-shadow: 0 4px 16px #f8bbd055;
+}
+
+.btn-warning,
+.btn-danger {
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.btn-warning:hover,
+.btn-danger:hover {
+    box-shadow: 0 4px 16px #ede7f655;
+}
+
+.table thead {
+    background: #f3e5f5;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background: #fffde7;
+}
+
+.form-control:focus {
+    border-color: #f8bbd0;
+    box-shadow: 0 0 0 0.2rem #f8bbd055;
+}
+
+.alert-success {
+    background: #ede7f6;
+    color: #00695c;
+}
+
+.alert-danger {
+    background: #f8bbd0;
+    color: #ad1457;
+}
+
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fffafc;
+    border: 1px solid #f3e5f5;
+    border-radius: 18px;
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px #f8bbd055;
+}

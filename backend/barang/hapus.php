@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION['admin'])) {
+    header('Location: ../login.php');
+    exit;
+}
 include '../db.php';
 
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
